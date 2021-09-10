@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="/script.js"></script>
+  <title>Relógio Analógico</title>
+</head>
+
+<body>
+  <div class="relogio">
+    <div class="porca-central">
+    </div>
+    <div class="porca-central2">
+    </div>
+    <div class="indicadores">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="sec-hand">
+      <div class="sec"></div>
+    </div>
+    <div class="min-hand">
+      <div class="min"></div>
+    </div>
+    <div class="hr-hand">
+      <div class="hr"></div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const sec = document.querySelector(".sec");
+  const min = document.querySelector(".min");
+  const hr = document.querySelector(".hr");
+  setInterval(function () {
+    let time = new Date();
+    let secs = time.getSeconds() * 6;
+    let mins = time.getMinutes() * 6;
+    let hrs = time.getHours() * 30;
+    sec.style.transform = `rotateZ(${secs}deg)`;
+    min.style.transform = `rotateZ(${mins}deg)`;
+    hr.style.transform = `rotateZ(${hrs + (mins / 12)}deg)`;
+  })
+</script>
+
+</html>
